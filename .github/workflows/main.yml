@@ -269,7 +269,7 @@ jobs:
         fi \
 
         # Sync the repositories
-        chmod +x /opt/crave/resync.sh && /opt/crave/resync.sh && \
+        /opt/crave/resync.sh && \
 
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
