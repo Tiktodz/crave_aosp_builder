@@ -398,6 +398,7 @@ jobs:
 
         # Build the ROM
         lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
+        repo forall -c 'git lfs install && git lfs pull && git lfs checkout' && \
         make installclean && \
         ${{ github.event.inputs.BUILD_COMMAND }}"
       timeout-minutes: 720
